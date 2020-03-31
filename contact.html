@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">  
+
+    <style>
+        *{
+	        margin: 0;
+	        padding: 0;
+	        
+        }
+        html,body{
+            background: url(contact.jpg) no-repeat;
+	        background-size: cover;
+        }
+        .contact{
+            text-align: center;
+            position: absolute;
+            top: 20%;
+            left: 40%;
+        }
+        
+        .contact-forms{
+            max-width: 600px;
+            margin: auto;
+            padding: 0 10px;
+            overflow: hidden;
+        }
+        .contact-forms1{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 16px 0;
+            border: 0;
+            border-radius: 20px;
+            background: white;
+            padding: 20px 40px;
+            outline: none;
+            color: black;
+            transition: 0.5s;
+        }
+        .contactbtn{
+            border: 0;
+            background: rgb(214, 252, 0);
+            color: black;
+            padding: 12px 50px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .contactbtn:hover{
+            background: yellowgreen;
+        }
+        .icons{
+            background: black;
+            border: 0;
+            border-radius: 10px;
+            position: absolute;
+            top: 60%;
+            left: 30%;
+        }
+        .icons img{
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+		<nav>
+        	<div class="logo">
+				<img src="logo.png">
+			</div>
+            	<ul style="font-size:20px;">
+                	<li><a href="Website.html">Home</a></li>
+                	<li><a href="cv.html">Porfolio</a></li>
+                	<li><a href="blog.html">Blog</a></li>
+					<li><a href="research.html"> Research</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+		</nav>
+            <div class="contact">
+                <h1 style="text-align:center;">Contact Me</h1>
+                <p>Please feel free to contact </p><br>
+                <form class="contact-forms" name="contact-forms1" onsubmit="validateForm()">
+                    <input type="text" class="contact-forms1"name="First Name" placeholder="First Name">
+                    <input type="text" class="contact-forms1" name="Last Name" placeholder="Last Name">
+                    <input type="text" class="contact-forms1" name="Email" placeholder="Email">
+                    <textarea name="message" class="contact-forms1" rows="10" cols="30" placeholder="Write your message"></textarea>
+                    <input type="Submit" class="contactbtn"value="Submit">
+                </form>
+            </div>
+    <script src="java.js"></script>
+    <script>
+		function validateForm() {
+			var fname = document.forms["contact-forms1"]["First Name"].value;
+			var lname = document.forms["contact-forms1"]["Last Name"].value;
+			var gender = document.forms["contact-forms1"]["Email"].value;
+			var message = document.forms["contact-forms1"]["message"].value;
+
+			if (fname == "" || lname == "" || message == ""){
+				alert("Please fill the empty filed.");
+			}
+			else {
+				alert("Thank you for the feedback.");
+			}
+		}
+	</script> 
+</body>
+</html>

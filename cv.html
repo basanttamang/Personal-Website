@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Porfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <style>  
+        *{
+	        margin: 0;
+	        padding: 0;
+	        color: rgb(8, 8, 8);
+            text-align: center;
+        }
+        html,body{
+            background: rgb(212, 236, 72);
+	        background-size: cover;
+        }
+        .profile{
+            position: absolute;
+            top: 20%;
+            left: 10%;
+        }
+        .profile img{
+            box-shadow: 2px 2px 8px black;
+            height: 500px;
+            width: 800px;
+        }
+        .intro{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .intro h1, .intro h2{
+            color: whitesmoke;
+            text-shadow: 2px 2px 4px black;
+        }
+        h1{
+            text-transform: uppercase;
+            font-size: 45px;
+        }
+        .education{
+            padding: 50px;
+            box-shadow: 2px 2px 4px black;
+            position: absolute;
+            top: 100%;
+            left: 35%;
+            height: 570px;
+        }
+        h2{
+            font-size: 35px;
+        }
+        p{
+            font-size: 20px;
+        }
+        .myslides{
+            margin: auto;
+        }
+        .myslides img{
+            height: 500px;
+            width: 300px;
+        }
+        .slide{
+            position: absolute;
+            top: 217%;
+            left: 30%;
+        }  
+        button{
+            margin-right: 20px;
+            width: 30px;
+        } 
+        .mywork{
+            position: absolute;
+            top: 210%;
+            left: 45%;
+        }
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            color: black;
+        }  
+    </style>
+</head>
+<body>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="main"> 
+		<nav>  
+        	<div class="logo">
+				<img src="logo.png">
+			</div>
+            	<ul style="font-size:20px;">
+                	<li><a href="Website.html">Home</a></li>
+                	<li><a href="cv.html">Porfolio</a></li>
+                	<li><a href="blog.html">Blog</a></li>
+					<li><a href="research.html"> Research</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+        </nav>
+        </div>
+        <div class="profile">
+            <img src="cv.jpg">
+        </div>
+        <div class="intro">
+            <h1 style="font-size:50px;">hey! i'm basant tamang</h1>
+            <h2>Graphic designer/Video editor</h2>
+        </div>
+        <div class="education">
+            <h1>Education</h1><br>
+            <h2>School</h2>
+            <p>Demos English School<br>
+                Passed Year: 2015<br> 
+                Percentage: 80%<br>
+            </p><br><br>
+            <h2>High School</h2>
+            <p>
+                GoldenGate International College<br>
+                Passed Year: 2017<br>
+                Subject: Science(Physics)<br>
+                Percentage: 63%<br>
+            </p><br><br>
+            <h2>Bachelor</h2>
+            <p>
+                Islington College<br>
+                Subject: Inforamtion Technology<br>
+                Status: 1 year<br>
+            </p><br><br>
+            <br><br><div class="skills">
+                <h1>Skills</h1><br>
+                <h3>
+                    Adobe Photoshop<br>
+                    Adobe Premiere Pro<br>
+                </h3>
+                <br><br>
+            </div>
+        </div>
+        <div class="mywork">
+            <h2>My Works</h2>
+        </div>
+        <div class="slide">
+            <img class="mySlides" src="img/1.jpg" style="height:600px; width:600px;">
+            <img class="mySlides" src="img/3.jpg" style="height:600px; width:600px;">
+            <img class="mySlides" src="img/4.jpg" style="height:600px; width:600px;">
+            <img class="mySlides" src="img/5.jpg" style="height:600px; width:600px;">
+            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button><br><br>
+        </div>
+        </div>
+        <script src="java"></script>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1} 
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+            }
+            x[slideIndex-1].style.display = "block";
+            setTimeout(showDivs, 2000); 
+            }
+
+            var slideIndex = 0;
+            carousel();
+            function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {slideIndex = 1} 
+            x[slideIndex-1].style.display = "block"; 
+            setTimeout(carousel, 5000); // Change image every 5 seconds
+            }       
+        </script>
+</body>
+</html>
